@@ -1,13 +1,47 @@
 <%- include('../partials/header') %>
 
-<h1 class="text-3xl font-bold">Contact Us</h1>
+<h1 class="text-3xl font-bold mb-4">
+    Contact Us
+</h1>
+
+<!-- Success Message -->
+<% if (typeof success !== 'undefined' && success) { %>
+
+    <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+        Contact form submitted successfully
+    </div>
+
+<% } %>
 
 <form action="/contact" method="POST" class="mt-4">
-    <input type="text" name="name" placeholder="Name" class="block mb-2 p-2 border w-full" required>
-    <input type="email" name="email" placeholder="Email" class="block mb-2 p-2 border w-full" required>
-    <textarea name="message" placeholder="Message" class="block mb-2 p-2 border w-full" required></textarea>
-    
-    <button class="bg-blue-500 text-white px-4 py-2">Submit</button>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        class="block mb-2 p-2 border w-full"
+        required
+    >
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        class="block mb-2 p-2 border w-full"
+        required
+    >
+
+    <textarea
+        name="message"
+        placeholder="Message"
+        class="block mb-2 p-2 border w-full"
+        required
+    ></textarea>
+
+    <button class="bg-blue-500 text-white px-4 py-2 rounded">
+        Submit
+    </button>
+
 </form>
 
 <%- include('../partials/footer') %>
